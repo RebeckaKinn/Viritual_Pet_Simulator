@@ -5,17 +5,22 @@
         private string _name { get; set; }
         private string _favFood { get; set; }
         private int _energy { get; set; }
-        public Pet()
-        {
-            _name = "Pusur";
-            _favFood = "Lasagna";
-            _energy = 5;
-        }//leser ikke navnet med mindre jeg skriver noe inn,
+        //public Pet()
+        //{
+        //    _name = "Pusur";
+        //    _favFood = "Lasagna";
+        //    _energy = 5;
+        //}//leser ikke navnet med mindre jeg skriver noe inn,
         public Pet(string name = "Pusur")
         {
             _name = name;
             _favFood = "Lasagna";
             _energy = 5;
+        }
+
+        public void ChangeFavFood(string newFood)
+        {
+            _favFood = newFood;
         }
         public string GetName()
         {

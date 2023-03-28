@@ -12,13 +12,11 @@
         public void InputChoice()
         {
             var mainPlay = new MainPlay();
-            var newPetList = new PetList();
             var input = Console.ReadLine();
             if (input == "\r" || input == null) RegeneratePet(mainPlay);
             else
             {
                 var newPet = new Pet(input);
-                newPetList.AddPet(newPet);
                 mainPlay.PetStartPage(newPet);
             }
         }
