@@ -4,7 +4,7 @@
     {
         public void Menu(Pet CurrentPet)
         {
-            Console.WriteLine("\n1 - Play\n2 - Feed\n3 - Quit\n");
+            Console.WriteLine("\n1 - Play\n2 - Feed\n3 - Change favourite food\n4 - Quit\n");
             var userInput = Console.ReadLine();
             switch (userInput)
             {
@@ -15,6 +15,9 @@
                     FeedPet(CurrentPet);
                     break;
                 case "3":
+                    NewFavFood(CurrentPet);
+                    break;
+                case "4":
                     QuitGame();
                     break;
                 default:
@@ -46,6 +49,14 @@
             Console.Clear();
             var gameplay = new Gameplay();
             gameplay.Intro();
+        }
+        public void NewFavFood(Pet CurrentPet)
+        {
+            Console.WriteLine("What is your pet's new favourite food?\n");
+            var newFood = Console.ReadLine();
+            CurrentPet.ChangeFavFood(newFood);
+            Console.WriteLine("Food updated!\n");
+            PetStartPage(CurrentPet);
         }
         public void CheckStats(Pet CurrentPet)
         {

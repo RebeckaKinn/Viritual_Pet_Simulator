@@ -6,7 +6,7 @@
         {
             Console.WriteLine("WELCOME TO THE DAY CARE\n");
             Console.WriteLine("Write your new pet's name \n or");
-            Console.WriteLine("push 'enter' to generate a random pet.\n");
+            Console.WriteLine("push 'enter' to generate Garfield.\n");
             InputChoice();
         }
         public void InputChoice()

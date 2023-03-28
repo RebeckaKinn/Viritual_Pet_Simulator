@@ -5,20 +5,13 @@
         private string _name { get; set; }
         private string _favFood { get; set; }
         private int _energy { get; set; }
-        //public Pet()
-        //{
-        //    _name = "Pusur";
-        //    _favFood = "Lasagna";
-        //    _energy = 5;
-        //}//leser ikke navnet med mindre jeg skriver noe inn,
-        public Pet(string name = "Pusur")
+        public Pet(string name = "Garfield")
         {
             _name = name;
-            _favFood = "Lasagna";
+            _favFood = "lasagna";
             _energy = 5;
         }
-
-        public void ChangeFavFood(string newFood)
+        public void ChangeFavFood(string newFood = "burgers")
         {
             _favFood = newFood;
         }
