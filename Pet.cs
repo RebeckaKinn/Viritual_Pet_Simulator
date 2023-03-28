@@ -10,7 +10,7 @@
             _name = "Pusur";
             _favFood = "Lasagna";
             _energy = 5;
-        }
+        }//leser ikke navnet med mindre jeg skriver noe inn,
         public Pet(string name = "Pusur")
         {
             _name = name;
