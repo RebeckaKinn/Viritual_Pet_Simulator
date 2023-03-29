@@ -5,19 +5,28 @@
         public void Menu(Pet CurrentPet)
         {
             Console.WriteLine("\n1 - Play\n2 - Feed\n3 - Change favourite food\n4 - Quit\n");
+        }
+        public void ReadMenuInput(Pet CurrentPet)
+        {
+            CheckStats(CurrentPet);
+            CurrentPet.ShowStats();
             var userInput = Console.ReadLine();
             switch (userInput)
             {
                 case "1":
+                    Console.Clear();
                     PlayWithPet(CurrentPet);
                     break;
                 case "2":
+                    Console.Clear();
                     FeedPet(CurrentPet);
                     break;
                 case "3":
+                    Console.Clear();
                     NewFavFood(CurrentPet);
                     break;
                 case "4":
+                    Console.Clear();
                     QuitGame();
                     break;
                 default:
@@ -27,14 +36,13 @@
         }
         public void PetStartPage(Pet CurrentPet)
         {
-            CheckStats(CurrentPet);
-            CurrentPet.ShowStats();
             Menu(CurrentPet);
+            ReadMenuInput(CurrentPet);
         }
         public void PlayWithPet(Pet CurrentPet)
         {
             CurrentPet.PlayWithPet();
-            PetStartPage(CurrentPet);
+            ReadMenuInput(CurrentPet);
         }
         public void FeedPet(Pet CurrentPet)
         {
@@ -42,7 +50,7 @@
             var input = Console.ReadLine();
             var chosenFood = input == CurrentPet.GetFood() ? CurrentPet.GetFood() : input;
             CurrentPet.FeedPet(chosenFood);
-            PetStartPage(CurrentPet);
+            ReadMenuInput(CurrentPet);
         }
         public void QuitGame()
         {
@@ -56,7 +64,7 @@
             var newFood = Console.ReadLine();
             CurrentPet.ChangeFavFood(newFood);
             Console.WriteLine("Food updated!\n");
-            PetStartPage(CurrentPet);
+            ReadMenuInput(CurrentPet);
         }
         public void CheckStats(Pet CurrentPet)
         {

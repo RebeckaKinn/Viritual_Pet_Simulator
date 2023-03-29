@@ -27,17 +27,20 @@
         {
             return _favFood;
         }
+        public void FeedPet()
+        {
+            Console.WriteLine($"Unsure, {_name} sniffs on the dry food and gives you a dissapointed look.");
+            _energy++;
+        }
         public void FeedPet(string food)
         {
             if (food == _favFood)
             {
                 Console.WriteLine($"{_name} is super stoked and devours all of the {_favFood}!");
-                _energy++;
+                int newStat = _energy + 5;
+                _energy = newStat;
             }
-            else
-            {
-                Console.WriteLine($"Unsure, {_name} sniffs on the {food} and gives you a dissapointed look.");
-            }
+            else FeedPet();
         }
         public void PlayWithPet()
         {

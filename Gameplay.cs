@@ -13,7 +13,7 @@
         {
             var mainPlay = new MainPlay();
             var input = Console.ReadLine();
-            if (input == "\r" || input == null) RegeneratePet(mainPlay);
+            if (input == "" || input == null) RegeneratePet(mainPlay);
             else
             {
                 var newPet = new Pet(input);
